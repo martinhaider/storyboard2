@@ -1,0 +1,57 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.9a3d4166cbd481b4822a.js",
+        "/polyfills.9926c8db02c4ae3ee015.js",
+        "/runtime.a66f828dca56eeb90e02.js",
+        "/scripts.385b291e179030219400.js",
+        "/styles.f6ec1ac8135e918c65d6.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png"
+      ],
+      "patterns": [
+        "https:\\/\\/use\\.fontawesome\\.com\\/releases\\/v5\\.0\\.13\\/css\\/all\\.css"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/index.html": "57f37e51421202a6bf50ffdc8f7c8d19f1c80ada",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/main.9a3d4166cbd481b4822a.js": "5c7458c9e64c35f09c4ef07e3217c0636ba646b9",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/polyfills.9926c8db02c4ae3ee015.js": "2f42da22fe0380a8ab7b34e4f489147175771000",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/scripts.385b291e179030219400.js": "93b30a219abf42ed47df6bf810c86251026b2ce9",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/styles.f6ec1ac8135e918c65d6.css": "b2b8313565fb0edfb55447a0172e4e580c4a3ffa",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41"
+  }
+}

@@ -1,0 +1,140 @@
+@mixin box-shadow($top, $left, $blur, $spread, $color) {
+  -webkit-box-shadow: $left $top $blur $spread $color;
+  -moz-box-shadow: $left $top $blur $spread $color;
+  box-shadow: $left $top $blur $spread $color;
+}
+
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  @include box-shadow(0px, 0px, 5px, 4px, #BBB)
+}
+
+.card-header {
+  background-color: aqua;
+}
+
+.scroll {
+  overflow-y: hidden;
+  height: calc(100% - 75px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.column {
+  height: calc(100% - 19px);
+  overflow-y: hidden;
+  flex: 0 0 auto;
+  width: 300px;
+  max-height: 600px;
+  padding: 0;
+  margin: 20px 10px;
+
+  &:first-child {
+    margin-left: 10px;
+  }
+  &:last-child {
+    border-right: 10px solid transparent;
+  }
+
+  &:hover {
+    .columnHeader {
+      i {
+        visibility: visible;
+      }
+    }
+  }
+
+  .columnHeader {
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    i {
+      visibility: hidden;
+      font-size: 12px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  }
+
+  .columnBox {
+    height: calc(100% - 41px);
+    overflow: auto;
+    background-color: #F8F8F8;
+    padding: 0 10px;
+    transition: .3s;
+    border: 1px solid #ECEEEF;
+    @include rounded(5px);
+  }
+}
+
+.task {
+  @include rounded(3px);
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  @include box-shadow(0px, 0px, 2px, 2px, #ECEEEF);
+
+  .taskHeader {
+    font-size: 14px;
+    font-weight: 500;
+    .badge {
+      margin-bottom: 6px;
+    }
+  }
+  .taskDescription {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .taskAssignee {
+    font-size: 11px;
+    color: green;
+  }
+  i {
+    cursor: pointer;
+    visibility: hidden;
+    font-size: 12px;
+  }
+  &:hover {
+    i {
+      visibility: visible;
+    }
+  }
+}
+
+h6 {
+  font-size: 14px;
+}
+
+
+.drag-border {
+  border: none !important;
+  visibility: hidden;
+  i {
+    visibility: hidden !important;
+  }
+}
+
+.drag-transit {
+  border: none !important;
+}
+
+.drag-target-bg {
+  background-color: #ECEEEF !important;
+}

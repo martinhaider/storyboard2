@@ -1,0 +1,12 @@
+<div class="task" draggable [dragData]="task">
+  <div class="taskHeader d-flex justify-content-between align-items-center">
+    <h6>{{ task.title }}</h6>
+    <span class="badge badge-dark badge-pill">{{ task.estimate }}</span>
+  </div>
+  <p class="taskDescription">{{ task.description }}</p>
+  <div class="taskFooter d-flex">
+    <span class="taskAssignee mr-auto">{{ task.assignee }}</span>
+    <i class="fas fa-pencil-alt mr-2" data-toggle="modal" data-target="#editTaskModal"></i>
+    <i class="far fa-trash-alt" (click)="deleteTask(task.id)"></i>
+  </div>
+</div>

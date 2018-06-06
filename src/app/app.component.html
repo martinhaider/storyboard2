@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #ECEEEF;">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <app-task-modal></app-task-modal>
+    <app-column-modal></app-column-modal>
+    <div class="mr-auto"></div>
+    <span class="mr-3 text-light small">
+      <i class="fas fa-sync"></i>
+      status...
+    </span>
+    <button type="button" class="btn btn-outline-warning btn-sm">Reset Board</button>
+  </div>
+</nav>
+
+<div class="scroll">
+  <app-column *ngFor="let column of columns; let i = index" [column]="column" [i]="i"></app-column>
+</div>
+
+<!--
+<div class="modal fade" id="columnEditModal" tabindex="-1" role="dialog" aria-labelledby="columnEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="columnEditModalLabel">Edit Column</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="columnTitle">Title</label>
+          <input type="text" class="form-control" id="columnTitle" placeholder="Enter column title" name="columnTitle" #newColumnTitle>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateColumn(newColumnTitle.value)">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
