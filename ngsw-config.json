@@ -1,7 +1,7 @@
 {
   "index": "/index.html",
   "assetGroups": [{
-    "name": "app",
+    "name": "Storyboard",
     "installMode": "prefetch",
     "resources": {
       "files": [
