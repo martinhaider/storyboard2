@@ -23,4 +23,9 @@ export class TaskService {
     this.taskCollection.doc(id).update({ columnID: columnID });
   }
 
+
+  deleteTask(id: string){
+    this.taskCollection.doc(id).delete();
+  }
+
 }

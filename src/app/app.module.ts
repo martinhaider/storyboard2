@@ -7,6 +7,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { TaskService } from './services/task.service';
 import { ColumnService } from './services/column.service';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
@@ -38,6 +39,7 @@ const firebaseConfig = {
     FormsModule,
     ToastrModule.forRoot(),
     NgDragDropModule.forRoot(),
+      NgxSmartModalModule.forRoot()
   ],
   providers: [
     TaskService,

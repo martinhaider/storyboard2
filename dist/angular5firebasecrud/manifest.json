@@ -1,8 +1,8 @@
 {
-  "name": "angular5firebasecrud",
-  "short_name": "angular5firebasecrud",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Storyboard 2.0",
+  "short_name": "Storyboard 2.0",
+  "theme_color": "#6DB6D0",
+  "background_color": "#fff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

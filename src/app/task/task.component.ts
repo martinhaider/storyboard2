@@ -1,6 +1,7 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { Task } from './task.model';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {TaskService} from '../services/task.service';
 
 declare var $: any;
 
@@ -12,13 +13,13 @@ declare var $: any;
 export class TaskComponent implements OnInit {
   @Input() task: Task;
 
-  taskCollection: AngularFirestoreCollection<Task> = this.db.collection('tasks')
-
-  constructor(private db: AngularFirestore) {
+  constructor(private taskService: TaskService) {
   }
 
   deleteTask(id: string){
-    this.taskCollection.doc(id).delete();
+    if(confirm('Are you sure to delete this record ?') == true){
+      this.taskService.deleteTask(id);
+    }
   }
 
   ngOnInit() {

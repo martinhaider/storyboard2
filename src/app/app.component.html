@@ -4,8 +4,9 @@
     <app-column-modal></app-column-modal>
     <div class="mr-auto"></div>
     <span class="mr-3 text-light small">
-      <i class="fas fa-sync"></i>
-      status...
+      <i class="fas" [ngClass]="{ 'fa-signal': online === true, 'fa-exclamation-triangle': online === false }"></i>
+      <span *ngIf="online === true">online</span>
+      <span *ngIf="online === false">offline</span>
     </span>
     <button type="button" class="btn btn-outline-warning btn-sm">Reset Board</button>
   </div>
@@ -14,6 +15,29 @@
 <div class="scroll">
   <app-column *ngFor="let column of columns; let i = index" [column]="column" [i]="i"></app-column>
 </div>
+
+<ngx-smart-modal #columnEditModal identifier="columnEditModal" customClass="modal-content" [closable]="false">
+  <div class="modal-header">
+    <h5 class="modal-title">Modal title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngIf="columnEditModal.hasData()">
+      <pre>{{ columnEditModal.getData() | json }}</pre>
+    </div>
+    <div class="form-group">
+      <label for="columnTitle">Title</label>
+      <input type="text" class="form-control" id="columnTitle" value="{{ columnEditModal.title }}" placeholder="Enter column title" name="columnTitle" #newColumnTitle>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="closeModal()">Save changes</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close
+    </button>
+  </div>
+</ngx-smart-modal>
 
 <!--
 <div class="modal fade" id="columnEditModal" tabindex="-1" role="dialog" aria-labelledby="columnEditModalLabel" aria-hidden="true">

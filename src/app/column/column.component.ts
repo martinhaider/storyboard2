@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Input } from '@angular/core';
 import {Column} from './column.model';
 import {Task} from '../task/task.model';
 import {TaskService} from '../services/task.service';
 import {DropEvent} from 'ng-drag-drop';
+import {ColumnService} from '../services/column.service';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-column',
@@ -14,10 +16,22 @@ export class ColumnComponent implements OnInit {
   @Input() i: number;
 
   tasks: Task[] = [];
-  constructor(private taskService: TaskService) { }
+  columnCount: number;
+
+  constructor(private taskService: TaskService, private columnService: ColumnService, private ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
     this.taskService.getTasks().subscribe((tasks: Task[]) => this.tasks = tasks);
+  }
+
+  openModal(title: string, columnID: number){
+    const obj: Object = {
+      title: title,
+        columnID: columnID
+    };
+    console.log(obj);
+    this.ngxSmartModalService.setModalData(obj, 'columnEditModal');
+    this.ngxSmartModalService.open('columnEditModal');
   }
 
   onListDrop(e: DropEvent, columnID: number) {

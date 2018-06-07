@@ -1,7 +1,7 @@
 <div class="column">
   <div class="columnHeader d-flex justify-content-between align-items-center">
     {{ column.title }}
-    <i class="fas fa-pencil-alt"></i>
+    <i class="fas fa-pencil-alt" (click)="openModal(column.title, column.columnID)"></i>
   </div>
   <div class="columnBox" droppable [dragOverClass]="'drag-target-bg'" (onDrop)="onListDrop($event, i)">
     <app-task *ngFor="let task of filterItemsOfId(i)" [task]="task"></app-task>
